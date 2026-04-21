@@ -39,6 +39,21 @@ function updateTime() {
       document.getElementById('current-time').textContent = new Date().toLocaleTimeString();
 }
 
+// Initialization
+fetchWeather();
+updateTime();
+setInterval(fetchWeather, 600000);
+setInterval(updateTime, 1000);
+
+// Footer update
+const footerInterval = setInterval(() => {
+          const footerP = document.querySelector('.footer p') || document.querySelector('footer p');
+          if (footerP) {
+                        footerP.innerHTML = 'Data provided by Open-Meteo  | Created by tjdud';
+                        clearInterval(footerInterval);
+          }
+}, 500);
+
 setInterval(updateTime, 1000);
 fetchWeather();
 
