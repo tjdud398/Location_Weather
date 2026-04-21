@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Haeundae Weather</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>해운대 날씨 라이브 | Haeundae Weather Tracker</title>
+    <meta name="description" content="부산 해운대구 우동의 실시간 날씨를 모니터링하는 세련된 대시보드입니다.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-      <h1>Fixing...</h1>
+    <div id="bg-overlay"></div>
+    <main class="container">
+        <header class="header">
+            <div class="location">
+                <i data-lucide="map-pin"></i>
+                <h1>부산광역시 해운대구 우동</h1>
+            </div>
+            <div class="time-display" id="current-time">00:00:00</div>
+        </header>
+
+        <section class="weather-main" id="weather-main">
+            <div class="glass-card main-card">
+                <div class="weather-icon-large" id="main-icon">
+                    <i data-lucide="sun" size="80"></i>
+                </div>
+                <div class="temp-display">
+                    <span id="current-temp">--</span><span class="unit">°C</span>
+                </div>
+                <div class="weather-desc" id="weather-desc">데이터를 불러오는 중...</div>
+                <div class="min-max">
+                    <span id="temp-max">--°</span> / <span id="temp-min">--°</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="hourly-container">
+            <h2 class="section-title">시간대별 예보</h2>
+            <div class="hourly-list" id="hourly-list">
+                <!-- Hourly items will be injected here -->
+            </div>
+        </section>
+
+        <section class="weather-details">
+            <div class="glass-card detail-card">
+                <i data-lucide="droplets"></i>
+                <div class="detail-info">
+                    <span class="label">습도</span>
+                    <span class="value" id="humidity">--%</span>
+                </div>
+            </div>
+            <div class="glass-card detail-card">
+                <i data-lucide="wind"></i>
+                <div class="detail-info">
+                    <span class="label">풍속</span>
+                    <span class="value" id="wind-speed">-- km/h</span>
+                </div>
+            </div>
+            <div class="glass-card detail-card">
+                <i data-lucide="eye"></i>
+                <div class="detail-info">
+                    <span class="label">가시거리</span>
+                    <span class="value" id="visibility">-- km</span>
+                </div>
+            </div>
+            <div class="glass-card detail-card">
+                <i data-lucide="gauge"></i>
+                <div class="detail-info">
+                    <span class="label">기압</span>
+                    <span class="value" id="pressure">-- hPa</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Data provided by Open-Meteo • Created by tjdud</p>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
 </body>
-</html>html></h1>
-</body></title>
-  </head>
+</html>
